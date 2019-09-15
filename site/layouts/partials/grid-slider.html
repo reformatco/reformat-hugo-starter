@@ -1,0 +1,18 @@
+<div class="slider h-full">
+  {{ range .dot.Resources.Match .graphic }}
+  <picture class="slide h-full">
+    {{ $mega := .Fill "1200x750 smart" }}
+    {{ $xl := .Fill "800x550 smart" }}
+    {{ $md := .Fill "768x528 smart" }}
+    {{ $sm := .Resize "375x" }}
+    {{ $mega2x := .Fill "2400x1500 smart" }}
+    {{ $xl2x := .Fill "1600x1100 smart" }}
+    {{ $md2x := .Fill "1536x1056 smart" }}
+    {{ $sm2x := .Resize "750x" }}
+    <source srcset="{{ $mega.RelPermalink }} 1x,{{ $mega2x.RelPermalink }} 2x" media="(min-width:1440px)">
+    <source srcset="{{ $xl.RelPermalink }} 1x,{{ $xl2x.RelPermalink }} 2x" media="(min-width:1024px)">
+    <source srcset="{{ $md.RelPermalink }} 1x,{{ $md2x.RelPermalink }} 2x" media="(min-width:768px)">
+    <img src="{{ $sm.RelPermalink }}" srcset="{{ $sm2x.RelPermalink }} 2x" class="w-full md:h-full md:object-cover lazyload" alt="">
+  </picture>
+  {{ end }}
+</div>

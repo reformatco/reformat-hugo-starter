@@ -1,0 +1,186 @@
+.modal-nav {
+  @apply bg-white text-black fixed top-0 left-0 w-full h-full flex flex-col justify-center opacity-0 invisible;
+  transition:visibility 0s linear .66s,opacity .66s linear;
+}
+
+.branding {
+  transition:all .66s;
+}
+
+.nav-active {
+  overflow:hidden;
+  .modal-nav {
+    @apply visible opacity-100;
+    transition-delay:0s;
+  }
+  .logotype {
+    @apply text-black;
+    opacity:1 !important;
+  }
+}
+
+.burger {
+  @apply relative z-50 block bg-transparent text-white font-sans font-semibold;
+  @apply w-12 h-12;
+
+  @screen lg {
+    @apply w-16 h-16;
+  }
+  cursor: pointer;
+  display: block;
+  transition:background-color .66s;
+  outline:none;
+
+  &::after {
+    content: "Close";
+    @apply uppercase text-center w-full absolute left-0 opacity-0;
+    top:50%;
+    transform:translateY(-50%);
+    transition: opacity .66s;
+  }
+
+  span {
+    background-color: currentColor;
+    display: block;
+    height: 4px;
+    left: calc(50% - 1rem);
+    position: absolute;
+    transform-origin: center;
+    transition-duration: .33s;
+    transition-property: background-color, opacity, transform, color;
+    transition-timing-function: ease-out;
+    width: 2rem;
+
+    &:nth-child(1) {
+      top: calc(50% - 12px);
+    }
+
+    &:nth-child(2) {
+      top: calc(50% - 2px);
+    }
+
+    &:nth-child(3) {
+      top: calc(50% + 8px);
+    }
+
+
+  }
+
+  &[aria-expanded=true] {
+    @apply text-black;
+    &::after {
+      @apply opacity-100;
+    }
+    span {
+      @apply opacity-0;
+    }
+  }
+}
+
+.menubar {
+  @apply py-8;
+  @screen md {
+    @apply py-16;
+    max-width:480px;
+  }
+  @screen xl {
+    @apply py-24;
+  }
+
+}
+
+.menuwrap {
+  @apply flex flex-col justify-between items-center;
+  &:before,
+  &:after {
+    @apply text-black leading-none uppercase font-semibold ;
+  }
+  /* &:before {
+    content:"We are";
+  }
+  &:after {
+    content:"Open";
+    order:3;
+  } */
+  .socials {
+    order:4;
+  }
+}
+
+.socials {
+  @apply mt-16 text-center leading-none absolute bottom-0 mb-8;
+  @screen md {
+    @apply mb-16;
+  }
+  @screen lg {
+    @apply mb-12;
+  }
+  @screen xl {
+    @apply mb-16;
+  }
+  ul {
+    @screen md {
+      @apply inline-flex;
+    }
+  }
+  a {
+    @apply inline-flex relative items-center px-4;
+    
+  }
+}
+
+.menu-item {
+  @apply text-black leading-none uppercase font-semibold px-16;
+
+  /* &.active a {
+    &::after {
+      @apply bg-grey;
+    }
+  } */
+  button {
+    @apply block bg-white;
+    width:2rem;
+    height:2rem;
+  }
+  & > a[aria-expanded=true] {
+    & + .sub-menu {
+			visibility: visible;
+			opacity:1;
+			transition-delay:0s;
+    }
+  }
+}
+
+.main-header {
+  /* transition:background-color .33s; */
+  z-index:50;
+}
+
+.scrolling {
+  .main-header {
+    /* @apply bg-black; */
+  }
+  /* .logotype,
+  .burger {
+    @apply text-black;
+  } */
+}
+
+.logotype {
+  @apply font-sans z-50 leading-none uppercase font-semibold text-white relative ml-6;
+}
+
+.logotype,
+.menu-item a {
+  @apply inline-flex relative items-center px-8;
+  
+}
+
+
+.has-children > {
+  a::after {
+    @apply ml-5;
+    content:"+";
+    /* font-size:1.2em; */
+  }
+}

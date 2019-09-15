@@ -1,9 +1,16 @@
 {{ define "main" }}
 
-<h1 class="text-2xl">Hugo with Webpack, Sass, and PostCSS</h1>
+  {{/*  banner  */}}
+  {{ partial "carousel" (dict "context" . "image" "**test-1*" "hero" "true") }}
 
-<h3>Hooray 🎉 - you've built this with <a href="https://github.com/netlify/victor-hugo">Victor-Hugo</a>!</h3>
+  <article>
+    {{ .Content }}
+  </article>
 
-<a href="{{ "/tech" | relURL }}">Check out the tech</a>
+  {{ with resources.GetMatch "**vector*" }}
+  <figure class="load-hidden slidein">
+    {{ .Content | safeHTML }}
+  </figure>
+  {{ end }}
 
 {{ end }}

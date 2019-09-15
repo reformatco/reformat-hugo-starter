@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+{{ if .Params.noindex }}
+    <meta name="robots" content="noindex">
+{{ end }}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="pinterest" content="nopin" />
+<base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
+<title>{{ .Title }}</title>
+{{ if not .Site.IsServer }}
+{{ partial "og.html" . }}
+{{ end }}
+{{ $stylesheet := .Site.Data.webpack.main }}
+{{ with $stylesheet.css }}
+  <link href="{{ relURL . }}" rel="stylesheet">
+{{ end }}

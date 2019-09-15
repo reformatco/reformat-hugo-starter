@@ -1,0 +1,65 @@
+/* @font-face {
+  font-family: 'TT Trailers';
+  font-style: normal;
+  font-display:auto;
+  src: url('../fonts/3A0722_0_0.woff2') format('woff2'),
+       url('../fonts/3A0722_0_0.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  font-style: normal;
+  font-display:auto;
+  src: url('../fonts/FoundersGroteskWeb-Regular.eot');
+  src: url('../fonts/FoundersGroteskWeb-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/FoundersGroteskWeb-Regular.woff2') format('woff2'),
+      url('../fonts/FoundersGroteskWeb-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  font-weight: 600;
+  font-style: normal;
+  font-display:auto;
+  src: url('../fonts/FoundersGroteskWeb-Semibold.eot');
+  src: url('../fonts/FoundersGroteskWeb-Semibold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/FoundersGroteskWeb-Semibold.woff2') format('woff2'),
+      url('../fonts/FoundersGroteskWeb-Semibold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  font-weight: 700;
+  font-style: normal;
+  font-display:auto;
+  src: url('../fonts/FoundersGroteskWeb-Bold.eot');
+  src: url('../fonts/FoundersGroteskWeb-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/FoundersGroteskWeb-Bold.woff2') format('woff2'),
+      url('../fonts/FoundersGroteskWeb-Bold.woff') format('woff');
+} */
+
+.res-text-sm {
+  font-size: responsive 21px 28px;
+  font-range: 640px theme('screens.xl');
+}
+
+.res-text-md {
+  font-size: responsive 28px 40px;
+  font-range: 640px theme('screens.xl');
+}
+
+.res-text-lg {
+  font-size: responsive 40px 60px;
+  font-range: 640px theme('screens.xl');
+}
+
+.res-text-xl {
+  font-size: responsive 40px 60px;
+  font-range: 640px theme('screens.xl');
+}
+
+.res-text-2xl {
+  font-size: responsive 70px 110px;
+  font-range: 640px theme('screens.xl');
+}
+

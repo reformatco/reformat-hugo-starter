@@ -1,0 +1,33 @@
+<header class="fixed w-full py-4 main-header md:py-8" id="site-header">
+  <div class="w-full px-4 md:px-8">
+    <div class="flex justify-between relative z-50">
+      <a class="res-text-md logotype " href="{{ $.Site.Home.RelPermalink }}" rel="home">{{ $.Site.Title }}</a>
+      <a class="burger" role="button" aria-label="Toggle navigation" tabindex="0" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+      <div class="modal-nav" role="dialog" tabindex="-1">
+        <div class="menuwrap res-text-lg">
+          <nav role="navigation" aria-label="Site navigation">
+            <ul class="menubar text-center font-sans list-reset flex flex-col items-center" role="menubar">
+              {{ $currentPage := . }}
+              {{ range .Site.Menus.main }}
+              <li class="menu-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}">
+                  <a href="{{ .URL }}"><span>{{ .Name }}</span></a>
+              </li>
+              {{ end }}
+            </ul>
+          </nav>
+          <aside class="socials res-text-md font-semibold">
+            <ul class="list-reset">
+              {{ range $.Site.Data.social.accounts }}
+              <li><a href="{{ .link }}" target="_blank" class="sa {{ .slug}}" rel="noopener nofollow">{{ .title }}</a></li>
+              {{ end }}
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

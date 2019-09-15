@@ -1,9 +1,48 @@
 baseurl = "/"
-languageCode = "en-us"
+languageCode = "en-gb"
 languageLang = "en"
-title = "My new Victor-Hugo site"
+title = "Starter"
 
-# RSS, categories and tags disabled for an easy start
-# See configuration options for more details: 
-# https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+copyright = "Company Ltd"
+
+[imagesizes]
+  sm = 375
+  md = 768
+  lg = 1280
+
+[imaging]
+quality = 85
+
+# [menu]
+
+#   [[menu.main]]
+#     identifier = "tenants"
+#     name = "Tenants"
+#     url = "/tenants/"
+#     weight = -100
+
+#   [[menu.main]]
+#     identifier = "residents"
+#     name = "Residents"
+#     url = "/residents/"
+#     weight = -90
+
+#   [[menu.main]]
+#     identifier = "neighbours"
+#     name = "Neighbours"
+#     url = "/neighbours/"
+#     weight = -80
+
+#   [[menu.main]]
+#     identifier = "past"
+#     name = "The Past"
+#     url = "/past/"
+#     weight = -70
+
+#   [[menu.main]]
+#     identifier = "future"
+#     name = "The Future"
+#     url = "/future/"
+#     weight = -60

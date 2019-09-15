@@ -125,6 +125,8 @@ module.exports = {
         800: '#97266d',
         900: '#702459',
       },
+      primary: theme => theme('colors.black'),
+      secondary: theme => theme('colors.white'),
     },
     spacing: {
       px: '1px',

@@ -1,0 +1,40 @@
+<section class="fs">
+  <figure class="hero">
+    <div class="carousel w-full h-full load-hidden slidein">
+      {{ range resources.Match .image }}
+      <picture class="slide w-full h-full">
+        {{ $mega := .Fill "1440x1000 center" }}
+        {{ $xl := .Fill "1280x850 center" }}
+        {{ $lg := .Fill "1024x680 center" }}
+        {{ $md := .Fill "768x510 center" }}
+        {{ $sm := .Fill "375x375 center" }}
+        {{ $mega2x := .Fill "2880x2000 center" }}
+        {{ $xl2x := .Fill "2560x1700 center" }}
+        {{ $lg2x := .Fill "2048x1360 center" }}
+        {{ $md2x := .Fill "1536x1020 center" }}
+        {{ $sm2x := .Fill "750x750 center" }}
+        <source srcset="{{ $mega.RelPermalink }} 1x,{{ $mega2x.RelPermalink }} 2x" media="(min-width:1440px)">
+        <source srcset="{{ $xl.RelPermalink }} 1x,{{ $xl2x.RelPermalink }} 2x" media="(min-width:1280px)">
+        <source srcset="{{ $lg.RelPermalink }} 1x,{{ $lg2x.RelPermalink }} 2x" media="(min-width:1024px)">
+        <source srcset="{{ $md.RelPermalink }} 1x,{{ $md2x.RelPermalink }} 2x" media="(min-width:768px)">
+        <img src="{{ $sm.RelPermalink }}" srcset="{{ $sm2x.RelPermalink }} 2x" draggable="false" class="w-full h-full object-cover lazyload select-none" alt="">
+      </picture>
+      {{ end }}
+    </div>
+    {{ if .overlay }}
+    <figcaption class="hero-graphic" aria-label="{{ with .title }}{{ . }}{{ end }}">
+      {{ $svg := resources.GetMatch .overlay }}
+      {{ $svg.Content | safeHTML }}
+    </figcaption>
+    {{ end }}
+  </figure>
+  <!-- {{ if .hero }}
+  <div class="branding">
+    <div class="anim-rotate">
+      {{ $svg := resources.Get "./img/logo.svg" }}
+      {{ $svg.Content | safeHTML }}
+    </div>
+  </div>
+  {{ end }} -->
+</section>
+<div class="st"></div>

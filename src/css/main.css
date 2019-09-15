@@ -1,8 +1,7 @@
+@import-glob './global/*.css';
+@import-glob './components/*.css';
+@import-glob './templates/*.css';
+
 @tailwind base;
-
 @tailwind components;
-
-/* Custom CSS */
-@import "custom";
-
 @tailwind utilities;

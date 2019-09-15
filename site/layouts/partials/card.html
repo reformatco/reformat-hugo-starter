@@ -1,0 +1,18 @@
+{{ with .Resources.GetMatch "**card*" }}
+<figure class="card mt-8 p-4 md:p-8 bg-yellow lg:bg-yellow load-hidden slidein">
+  <picture>
+    {{ $mega := .Fill "500x500 smart" }}
+    {{ $xl := .Fill "350x350 smart" }}
+    {{ $md := .Fill "250x250 smart" }}
+    {{ $sm := .Fill "150x150 smart" }}
+    {{ $mega2x := .Fill "1000x1000 smart" }}
+    {{ $xl2x := .Fill "700x700 smart" }}
+    {{ $md2x := .Fill "500x500 smart" }}
+    {{ $sm2x := .Fill "300x300 smart" }}
+    <source srcset="{{ $mega.RelPermalink }} 1x,{{ $mega2x.RelPermalink }} 2x" media="(min-width:1440px)">
+    <source srcset="{{ $xl.RelPermalink }} 1x,{{ $xl2x.RelPermalink }} 2x" media="(min-width:1280px)">
+    <source srcset="{{ $md.RelPermalink }} 1x,{{ $md2x.RelPermalink }} 2x" media="(min-width:768px)">
+    <img src="{{ $sm.RelPermalink }}" srcset="{{ $sm2x.RelPermalink }} 2x" class="w-full h-auto lazyload" alt="">
+  </picture>
+</figure>
+{{ end }}

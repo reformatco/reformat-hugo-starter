@@ -1,0 +1,13 @@
+<picture class="load-hidden slidein">
+  {{ with resources.GetMatch .graphic }}
+  {{ $xl := .Fill "400x400 smart" }}
+  {{ $md := .Fill "320x320 smart" }}
+  {{ $sm := .Fill "200x200 smart" }}
+  {{ $xl2x := .Fill "800x800 smart" }}
+  {{ $md2x := .Fill "640x640 smart" }}
+  {{ $sm2x := .Fill "400x400 smart" }}
+  <source srcset="{{ $xl.RelPermalink }} 1x,{{ $xl2x.RelPermalink }} 2x" media="(min-width:1280px)">
+  <source srcset="{{ $md.RelPermalink }} 1x,{{ $md2x.RelPermalink }} 2x" media="(min-width:768px)">
+  <img src="{{ $sm.RelPermalink }}" srcset="{{ $sm2x.RelPermalink }} 2x" class="w-full md:h-full md:object-cover lazyload" alt="">
+  {{ end }}
+</picture>

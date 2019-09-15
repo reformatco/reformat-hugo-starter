@@ -1,0 +1,5 @@
+{{ with resources.GetMatch (.Get 0) }}
+<figure class="illustration w-full h-auto load-hidden slidein">
+  {{ .Content | safeHTML }}
+</figure>
+{{ end }}

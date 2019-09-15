@@ -1,0 +1,58 @@
+<footer class="site-footer bg-black text-white gs">
+  <div class="container mx-auto px-8 md:px-12">
+    <div class="md:flex md:-mx-8 widgets">
+      <div class="md:px-8 md:w-1/2 widget-contact mb-8 md:mb-0">
+        <header>
+          <h3>Contact</h3>
+        </header>
+        <p>The Square Shopping Centre <br>
+          11 Town Square<br>
+          Sale M33 7WZ</p>
+        <p>0161 962 1086</p>
+        <p><a data-no-swup href="mailto:change@thesquaresale.co.uk">change@thesquaresale.co.uk</a></p>
+      </div>
+      <div class="md:px-8 md:w-1/2 widget-lettings">
+        <header>
+          <h3>Lettings</h3>
+        </header>
+        <div class="agent">
+          <h4>Sixteen</h4>
+          <h5>Alex Haigh</h5>
+          <p><a data-no-swup href="mailto:alex@sixteenrealestate.com">alex@sixteenrealestate.com</a></p>
+        </div>
+        <div class="agent">
+          <h4>Lambert Smith Hampton</h4>
+          <h5>Richard Lyons</h5>
+          <p><a data-no-swup href="mailto:rlyons@lsh.co.uk" class="strk">rlyons@lsh.co.uk</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="flex -mx-8 flex-wrap gs">
+      <hr class="border-t border-solid border-white w-full md:mx-8 mb-8">
+      <div class="px-8 w-1/2">
+        <ul class="social-menu">
+          {{ range $.Site.Data.social.accounts }}
+            <li><a href="{{ .link }}" data-no-swup target="_blank" rel="noopener nofollow"><strong>{{ .title }}</strong> {{ if .caption }}- {{ .caption }}{{ end }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="px-8 w-1/2">
+        <div class="flex -mx-4 md:w-2/3 xl:w-1/2">
+          <p>Logos</p>
+        </div>
+      </div>
+    </div>
+    <div class="md:flex md:-mx-8">
+      <div class="md:w-1/2 md:px-8 mb-8 md:mb-0">
+        <p>&copy; {{ .Site.Copyright }} {{ now.Format "2006"}}</p>
+      </div>
+      <div class="md:w-1/2 md:px-8">
+        <ul class="creators list-reset">
+          {{ range $.Site.Data.credits.authors }}
+            <li><a href="{{ .link }}" target="_blank" rel="noopener">{{ if .caption }}{{ .caption }}{{ else }}{{ .title }}{{ end }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

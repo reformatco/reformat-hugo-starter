@@ -1,0 +1,29 @@
+/* purgecss start ignore */
+
+html.sr .load-hidden {
+  visibility: hidden;
+}
+
+.transition-fade {
+  transition: .66s;
+  opacity: 1;
+}
+
+.transition {
+  transition:all .33s;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
+.lazyload {
+  @apply opacity-0;
+  transition:all .66s;
+}
+
+.lazyloaded {
+  @apply opacity-100;
+}
+
+/* purgecss end ignore */
